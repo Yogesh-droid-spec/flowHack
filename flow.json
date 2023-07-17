@@ -1,0 +1,51 @@
+{
+	"emulators": {
+		"default": {
+			"port": 3569,
+			"serviceAccount": "emulator-account"
+		}
+	},
+	"contracts": {
+		"HostContract": "./src/flow/cadence/HostContract.cdc",
+		"Profile": "./src/flow/cadence/Profile.cdc",
+		"User": "./src/flow/cadence/User.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "5112883de06b9576af62b9aafa7ead685fb7fb46c495039b1a83649d61bff97c"
+		},
+		"testnet-account": {
+			"address":"0xd64cbb21bf1c30ee",
+			"key": {
+			  "type": "hex",
+			  "index": 0,
+			  "signatureAlgorithm": "ECDSA_P256",
+			  "hashAlgorithm": "SHA3_256",
+			  "privateKey": "eb949cac1e502e3a3079a92990aca3fc82571404e1f2202ee0ed15220da7cc9f"
+			}
+		}		
+	},
+	"deployments": {
+		"emulator": {
+			"emulator-account": [
+				"HostContract",
+				"Profile",
+				"User"
+			]
+		},
+		"testnet": {
+		  "testnet-account": [
+			"HostContract",
+			"Profile",
+			"User"
+		  ]
+		}
+	}
+}
+
